@@ -1,3 +1,23 @@
-<h1>
-  {{title}}
-</h1>
+  <md-sidenav-layout>
+    <md-sidenav #start (open)="mybutton.focus()">
+      <md-toolbar color="primary">
+        <span>Menu Title</span>
+      </md-toolbar>
+      Start Sidenav.
+      <md-button #mybutton class="md-icon-button"(click)="start.close()"><md-icon>home</md-icon></md-button>
+    </md-sidenav>
+      <md-toolbar color="primary">
+        <md-button class="md-icon-button" aria-label="Settings" (click)="start.open()">
+           <md-icon>menu</md-icon>
+       </md-button>
+        <span>RShopper</span>
+  
+        <!-- This fills the remaining space of the current row -->
+        <span class="example-fill-remaining-space"></span>
+        
+        <md-button>Moi</md-button>
+      </md-toolbar>
+    
+    <div>My regular content. This will be moved into the proper DOM at runtime.</div>
+  </md-sidenav-layout>
+
