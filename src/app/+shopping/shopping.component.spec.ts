@@ -1,5 +1,3 @@
-import { HTTP_PROVIDERS } from '@angular/http';
-import {MdIconRegistry} from '@angular2-material/icon/icon-registry';
 import {
   beforeEach,
   beforeEachProviders,
@@ -11,25 +9,25 @@ import {
 import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testing';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { TestingComponent } from './testing.component';
+import { ShoppingComponent } from './shopping.component';
 
-describe('Component: Testing', () => {
+describe('Component: Shopping', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [HTTP_PROVIDERS, MdIconRegistry, TestingComponent]);
+  beforeEachProviders(() => [ShoppingComponent]);
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder) {
     builder = tcb;
   }));
 
-  it('should inject the component', inject([TestingComponent],
-      (component: TestingComponent) => {
+  it('should inject the component', inject([ShoppingComponent],
+      (component: ShoppingComponent) => {
     expect(component).toBeTruthy();
   }));
 
   it('should create the component', inject([], () => {
-    return builder.createAsync(TestingComponentTestController)
+    return builder.createAsync(ShoppingComponentTestController)
       .then((fixture: ComponentFixture<any>) => {
-        let query = fixture.debugElement.query(By.directive(TestingComponent));
+        let query = fixture.debugElement.query(By.directive(ShoppingComponent));
         expect(query).toBeTruthy();
         expect(query.componentInstance).toBeTruthy();
       });
@@ -39,10 +37,10 @@ describe('Component: Testing', () => {
 @Component({
   selector: 'test',
   template: `
-    <app-testing></app-testing>
+    <app-shopping></app-shopping>
   `,
-  directives: [TestingComponent]
+  directives: [ShoppingComponent]
 })
-class TestingComponentTestController {
+class ShoppingComponentTestController {
 }
 

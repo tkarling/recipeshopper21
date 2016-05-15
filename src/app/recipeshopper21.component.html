@@ -1,23 +1,28 @@
-  <md-sidenav-layout>
-    <md-sidenav #start (open)="mybutton.focus()">
-      <md-toolbar color="primary">
-        <span>Menu Title</span>
-      </md-toolbar>
-      Start Sidenav.
-      <md-button #mybutton class="md-icon-button"(click)="start.close()"><md-icon>home</md-icon></md-button>
-    </md-sidenav>
-      <md-toolbar color="primary">
-        <md-button class="md-icon-button" aria-label="Settings" (click)="start.open()">
-           <md-icon>menu</md-icon>
-       </md-button>
-        <span>RShopper</span>
+<md-sidenav-layout>
   
-        <!-- This fills the remaining space of the current row -->
-        <span class="example-fill-remaining-space"></span>
-        
-        <md-button>Moi</md-button>
-      </md-toolbar>
-    
-    <div>My regular content. This will be moved into the proper DOM at runtime.</div>
-  </md-sidenav-layout>
+  <!--side nav-->
+  <md-sidenav #start (open)="mybutton.focus()">
+    <md-toolbar color="primary">
+      <span>Menu Title</span>
+    </md-toolbar>
+    <nav>
+      <div (click)="start.close()"><a #mybutton [routerLink]="['/']">home</a></div>
+      <div (click)="start.close()"><a [routerLink]="['/shopping']">shopping</a></div>
+    </nav>
+  </md-sidenav>
+  
+  <!--application toolbar -->
+  <md-toolbar color="primary">
+    <md-button class="md-icon-button" aria-label="Settings" (click)="start.open()">
+      <md-icon>menu</md-icon>
+    </md-button>
+    <span>RShopper</span>
+    <span class="example-fill-remaining-space"></span>
+    <md-button><md-icon>search</md-icon></md-button>
+  </md-toolbar>
+
+ <!--page content -->
+ <router-outlet></router-outlet>
+
+</md-sidenav-layout>
 

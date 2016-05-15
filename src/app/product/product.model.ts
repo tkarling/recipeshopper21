@@ -8,17 +8,17 @@ export const EXTRAS = 'EXTRAS';
 
 export const aisles: string[] = [DAIRY, GRAINS, VEGGIES_FRUIT, EXTRAS];
 
-export class ProductModel{
+export class ProductModel {
   $key: string;
   recipe: string = FAVORITES;
   onList: boolean = true;
 
   constructor(
-    public name:string = '',
-    public aisle:string = '',
-    public amount: string = '',
-    public unit: string = '',
-    public isBought:boolean = false
-  ){
+    public name = '',
+    public aisle = '',
+    public amount = '',
+    public unit = '',
+    public isBought = false
+  ) {
   }
 }
