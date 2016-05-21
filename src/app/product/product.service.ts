@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import {ProductModel} from './product.model';
 
@@ -12,9 +12,7 @@ export class ProductService {
     console.log('hello');
     if (angularFire) {
       this.products = angularFire.database.list('/products');
-      this.products.subscribe((result) => {
-        console.log('result', result);
-      });
+      this.products.subscribe((result) => { console.log('result', result); });
     }
   }
 
@@ -27,41 +25,26 @@ export class ProductService {
   }
 
   // for unit testing only
-  $products() {
-    return this.$items;
-  }
+  $products() { return this.$items; }
 
-  editing(product: ProductModel) {
-    return this.editingProductKey === product.$key;
-  }
+  editing(product: ProductModel) { return this.editingProductKey === product.$key; }
 
-  startEditing(product: ProductModel) {
-    this.editingProductKey = product.$key;
-  }
+  startEditing(product: ProductModel) { this.editingProductKey = product.$key; }
 
-  stopEditing() {
-    this.editingProductKey = '';
-  }
+  stopEditing() { this.editingProductKey = ''; }
 
-  addProduct(newProduct: ProductModel) {
-    this.products.push(newProduct);
-  }
+  addProduct(newProduct: ProductModel) { this.products.push(newProduct); }
 
   updateProduct(product: ProductModel, updatedProduct: ProductModel) {
     this.products.update(product, updatedProduct);
     this.stopEditing();
   }
 
-  toggleOnList(product: ProductModel) {
-    this.products.update(product, { onList: !product.onList });
-  }
+  toggleOnList(product: ProductModel) { this.products.update(product, {onList: !product.onList}); }
 
   toggleBought(product: ProductModel) {
-    this.products.update(product, { isBought: !product.isBought });
+    this.products.update(product, {isBought: !product.isBought});
   }
 
-  removeProduct(product: ProductModel) {
-    this.products.remove(product);
-  }
-
+  removeProduct(product: ProductModel) { this.products.remove(product); }
 }

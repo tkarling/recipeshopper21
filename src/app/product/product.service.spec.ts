@@ -1,5 +1,6 @@
 // import { Injectable } from '@angular/core';
-// import {AngularFire, defaultFirebase, FIREBASE_PROVIDERS, FirebaseListObservable, FirebaseDatabase} from 'angularfire2';
+// import {AngularFire, defaultFirebase, FIREBASE_PROVIDERS, FirebaseListObservable,
+// FirebaseDatabase} from 'angularfire2';
 //
 //
 // import {

@@ -1,1 +1,1 @@
-export { RecipesComponent } from './recipes.component';
+export {RecipesComponent} from './recipes.component';
