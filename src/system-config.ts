@@ -38,7 +38,13 @@ const packages: any = {
     format: 'cjs',
     defaultExtension: 'js',
     main: 'icon.js'
+  },
+    '@angular2-material/list': {
+    format: 'cjs',
+    defaultExtension: 'js',
+    main: 'list.js'
   }
+
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -63,6 +69,9 @@ const barrels: string[] = [
   'app/shared',
   'app/testing',
   'app/+shopping',
+  'app/+aisles',
+  'app/+recipes',
+  'app/+favorites',
   /** @cli-barrel */
 ];
 

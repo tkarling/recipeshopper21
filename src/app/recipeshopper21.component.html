@@ -6,8 +6,11 @@
       <span>Menu Title</span>
     </md-toolbar>
     <nav>
-      <div (click)="start.close()"><a #mybutton [routerLink]="['/']">home</a></div>
-      <div (click)="start.close()"><a [routerLink]="['/shopping']">shopping</a></div>
+      <!--<div (click)="start.close()"><a #mybutton [routerLink]="['/']">home</a></div>-->
+      <div (click)="start.close()"><a #mybutton [routerLink]="['/shopping']">shopping</a></div>
+      <div (click)="start.close()"><a [routerLink]="['/favorites']">favorites</a></div>
+      <div (click)="start.close()"><a [routerLink]="['/recipes']">recipes</a></div>
+      <div (click)="start.close()"><a [routerLink]="['/aisles']">aisles</a></div>
     </nav>
   </md-sidenav>
   

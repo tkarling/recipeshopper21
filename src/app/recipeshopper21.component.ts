@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { HTTP_PROVIDERS } from '@angular/http';
 import { Routes, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
+import { AislesComponent } from './+aisles';
+import { RecipesComponent } from './+recipes';
+import { FavoritesComponent } from './+favorites';
 
 import {Observable} from 'rxjs/Rx';
 
@@ -29,7 +32,10 @@ import {TestingComponent} from './testing/testing.component';
   styleUrls: ['recipeshopper21.component.css']
 })
 @Routes([
-  { path: '/shopping', component: ShoppingComponent }
+  { path: '/shopping', component: ShoppingComponent },
+  {path: '/favorites', component: FavoritesComponent},
+  {path: '/recipes', component: RecipesComponent},
+  {path: '/aisles', component: AislesComponent}
 ])
 export class Recipeshopper21AppComponent {
   get title() {
