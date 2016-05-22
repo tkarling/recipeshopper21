@@ -1,0 +1,78 @@
+{
+  "classifier": {
+    "classFeatures": {
+      "vegetable": {
+        "0": 2,
+        "5": 2
+      },
+      "dairy": {
+        "1": 2,
+        "2": 2
+      },
+      "fruit": {
+        "3": 2,
+        "4": 2
+      }
+    },
+    "classTotals": {
+      "vegetable": 3,
+      "dairy": 3,
+      "fruit": 3
+    },
+    "totalExamples": 7,
+    "smoothing": 1
+  },
+  "docs": [
+    {
+      "label": "vegetable",
+      "text": [
+        "carrot"
+      ]
+    },
+    {
+      "label": "dairy",
+      "text": [
+        "milk"
+      ]
+    },
+    {
+      "label": "dairy",
+      "text": [
+        "butter"
+      ]
+    },
+    {
+      "label": "fruit",
+      "text": [
+        "appl"
+      ]
+    },
+    {
+      "label": "fruit",
+      "text": [
+        "orang"
+      ]
+    },
+    {
+      "label": "vegetable",
+      "text": [
+        "potato"
+      ]
+    }
+  ],
+  "features": {
+    "carrot": 1,
+    "milk": 1,
+    "butter": 1,
+    "appl": 1,
+    "orang": 1,
+    "potato": 1
+  },
+  "stemmer": {},
+  "lastAdded": 6,
+  "events": {
+    "domain": null,
+    "_events": {},
+    "_eventsCount": 0
+  }
+}
