@@ -14,11 +14,6 @@ export class ProductModel {
   onList: boolean = true;
 
   constructor(
-    public name = '',
-    public aisle = '',
-    public amount = '',
-    public unit = '',
-    public isBought = false
-  ) {
-  }
+      public name = '', public aisle = '', public amount = '', public unit = '',
+      public isBought = false) {}
 }

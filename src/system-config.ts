@@ -10,40 +10,13 @@ const map: any = {
 
 /** User packages configuration. */
 const packages: any = {
-  angularfire2: {
-    defaultExtension: 'js',
-    main: 'angularfire2.js'
-  },
-  '@angular2-material/core': {
-    format: 'cjs',
-    defaultExtension: 'js',
-    main: 'core.js'
-  },
-  '@angular2-material/sidenav': {
-    format: 'cjs',
-    defaultExtension: 'js',
-    main: 'sidenav.js'
-  },
-  '@angular2-material/toolbar': {
-    format: 'cjs',
-    defaultExtension: 'js',
-    main: 'toolbar.js'
-  },
-  '@angular2-material/button': {
-    format: 'cjs',
-    defaultExtension: 'js',
-    main: 'button.js'
-  },
-  '@angular2-material/icon': {
-    format: 'cjs',
-    defaultExtension: 'js',
-    main: 'icon.js'
-  },
-    '@angular2-material/list': {
-    format: 'cjs',
-    defaultExtension: 'js',
-    main: 'list.js'
-  }
+  angularfire2: {defaultExtension: 'js', main: 'angularfire2.js'},
+  '@angular2-material/core': {format: 'cjs', defaultExtension: 'js', main: 'core.js'},
+  '@angular2-material/sidenav': {format: 'cjs', defaultExtension: 'js', main: 'sidenav.js'},
+  '@angular2-material/toolbar': {format: 'cjs', defaultExtension: 'js', main: 'toolbar.js'},
+  '@angular2-material/button': {format: 'cjs', defaultExtension: 'js', main: 'button.js'},
+  '@angular2-material/icon': {format: 'cjs', defaultExtension: 'js', main: 'icon.js'},
+  '@angular2-material/list': {format: 'cjs', defaultExtension: 'js', main: 'list.js'}
 
 };
 
@@ -53,45 +26,29 @@ const packages: any = {
  **********************************************************************************************/
 const barrels: string[] = [
   // Angular specific barrels.
-  '@angular/core',
-  '@angular/common',
-  '@angular/compiler',
-  '@angular/http',
-  '@angular/router',
-  '@angular/platform-browser',
-  '@angular/platform-browser-dynamic',
+  '@angular/core', '@angular/common', '@angular/compiler', '@angular/http', '@angular/router',
+  '@angular/platform-browser', '@angular/platform-browser-dynamic',
 
   // Thirdparty barrels.
   'rxjs',
 
   // App specific barrels.
-  'app',
-  'app/shared',
-  'app/testing',
-  'app/+shopping',
-  'app/+aisles',
-  'app/+recipes',
+  'app', 'app/shared', 'app/testing', 'app/+shopping', 'app/+aisles', 'app/+recipes',
   'app/+favorites',
   /** @cli-barrel */
 ];
 
 const cliSystemConfigPackages: any = {};
-barrels.forEach((barrelName: string) => {
-  cliSystemConfigPackages[barrelName] = { main: 'index' };
-});
+barrels.forEach((barrelName: string) => { cliSystemConfigPackages[barrelName] = {main: 'index'}; });
 
 /** Type declaration for ambient System. */
 declare var System: any;
 
 // Apply the CLI SystemJS configuration.
 System.config({
-  map: {
-    '@angular': 'vendor/@angular',
-    'rxjs': 'vendor/rxjs',
-    'main': 'main.js'
-  },
+  map: {'@angular': 'vendor/@angular', 'rxjs': 'vendor/rxjs', 'main': 'main.js'},
   packages: cliSystemConfigPackages
 });
 
 // Apply the user's configuration.
-System.config({ map, packages });
+System.config({map, packages});

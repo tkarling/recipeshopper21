@@ -1,1 +1,1 @@
-export { AislesComponent } from './aisles.component';
+export {AislesComponent} from './aisles.component';

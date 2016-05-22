@@ -1,1 +1,1 @@
-export { ShoppingComponent } from './shopping.component';
+export {ShoppingComponent} from './shopping.component';

@@ -1,3 +1,5 @@
-<p>
-  aisles works!
-</p>
+<h1>Aisles</h1>
+<input #term (keyup)="getAisles(term.value)"/>
+<ul>
+  <li *ngFor="let item of items | async">{{item}}</li>
+</ul>
