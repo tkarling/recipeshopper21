@@ -12,6 +12,7 @@ import {MdButton} from '@angular2-material/button';
 import {MdIcon} from '@angular2-material/icon';
 import {MdIconRegistry} from '@angular2-material/icon/icon-registry';
 import {MdToolbar} from '@angular2-material/toolbar';
+import {MdList, MdListItem} from '@angular2-material/list';
 
 import { ShoppingComponent } from './+shopping';
 import { ProductService } from './product/product.service';
@@ -24,6 +25,7 @@ import {TestingComponent} from './testing/testing.component';
     ROUTER_DIRECTIVES,
     MD_SIDENAV_DIRECTIVES,
     MdButton, MdIcon, MdToolbar,
+    MdList, MdListItem,
     TestingComponent],
   providers: [HTTP_PROVIDERS, ROUTER_PROVIDERS],
   viewProviders: [MdIconRegistry],

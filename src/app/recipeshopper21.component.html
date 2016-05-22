@@ -1,19 +1,21 @@
 <md-sidenav-layout>
-  
+
   <!--side nav-->
   <md-sidenav #start (open)="mybutton.focus()">
     <md-toolbar color="primary">
-      <span>Menu Title</span>
+      <span>RShopper</span>
     </md-toolbar>
     <nav>
-      <!--<div (click)="start.close()"><a #mybutton [routerLink]="['/']">home</a></div>-->
-      <div (click)="start.close()"><a #mybutton [routerLink]="['/shopping']">shopping</a></div>
-      <div (click)="start.close()"><a [routerLink]="['/favorites']">favorites</a></div>
-      <div (click)="start.close()"><a [routerLink]="['/recipes']">recipes</a></div>
-      <div (click)="start.close()"><a [routerLink]="['/aisles']">aisles</a></div>
+      <md-nav-list>
+        <!--<div (click)="start.close()"><a #mybutton [routerLink]="['/']">home</a></div>-->
+        <md-list-item (click)="start.close()"><a #mybutton [routerLink]="['/shopping']">Shopping</a></md-list-item>
+        <md-list-item (click)="start.close()"><a [routerLink]="['/favorites']">Favorites</a></md-list-item>
+        <md-list-item (click)="start.close()"><a [routerLink]="['/recipes']">Recipes</a></md-list-item>
+        <md-list-item (click)="start.close()"><a [routerLink]="['/aisles']">Aisles</a></md-list-item>
+      </md-nav-list>
     </nav>
   </md-sidenav>
-  
+
   <!--application toolbar -->
   <md-toolbar color="primary">
     <md-button class="md-icon-button" aria-label="Settings" (click)="start.open()">
@@ -21,11 +23,12 @@
     </md-button>
     <span>RShopper</span>
     <span class="example-fill-remaining-space"></span>
-    <md-button><md-icon>search</md-icon></md-button>
+    <md-button>
+      <md-icon>search</md-icon>
+    </md-button>
   </md-toolbar>
 
- <!--page content -->
- <router-outlet></router-outlet>
+  <!--page content -->
+  <router-outlet></router-outlet>
 
 </md-sidenav-layout>
-
