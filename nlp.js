@@ -32,7 +32,7 @@ app.get('/all', function (req, res) {
 
 app.post('/train', function (req, res) {
   console.log(req.body);
-  classifier.addDocument(req.body.text, req.body.isle);
+  classifier.addDocument(req.body.text, req.body.aisle);
   classifier.train();
   classifier.save('classifier.json', function (err, classifier) {
     console.log("Classifier updated.");

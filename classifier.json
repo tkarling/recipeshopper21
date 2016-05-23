@@ -7,7 +7,8 @@
       },
       "dairy": {
         "1": 2,
-        "2": 2
+        "2": 2,
+        "6": 2
       },
       "fruit": {
         "3": 2,
@@ -16,10 +17,10 @@
     },
     "classTotals": {
       "vegetable": 3,
-      "dairy": 3,
+      "dairy": 4,
       "fruit": 3
     },
-    "totalExamples": 7,
+    "totalExamples": 8,
     "smoothing": 1
   },
   "docs": [
@@ -58,6 +59,12 @@
       "text": [
         "potato"
       ]
+    },
+    {
+      "label": "dairy",
+      "text": [
+        "egg"
+      ]
     }
   ],
   "features": {
@@ -66,10 +73,11 @@
     "butter": 1,
     "appl": 1,
     "orang": 1,
-    "potato": 1
+    "potato": 1,
+    "egg": 1
   },
   "stemmer": {},
-  "lastAdded": 6,
+  "lastAdded": 7,
   "events": {
     "domain": null,
     "_events": {},
