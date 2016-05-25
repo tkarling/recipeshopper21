@@ -29,7 +29,7 @@ describe('Component: Favorites', () => {
 @Component({
   selector: 'test',
   template: `
-    <app-favorites></app-favorites>
+    <rs-favorites></rs-favorites>
   `,
   directives: [FavoritesComponent]
 })

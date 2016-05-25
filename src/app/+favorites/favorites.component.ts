@@ -1,8 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 
+import {ProductListComponent} from '../shared';
+
 @Component({
   moduleId: module.id,
-  selector: 'app-favorites',
+  selector: 'rs-favorites',
+  directives: [ProductListComponent],
   templateUrl: 'favorites.component.html',
   styleUrls: ['favorites.component.css']
 })
