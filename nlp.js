@@ -43,7 +43,9 @@ app.post('/train', function (req, res) {
 app.use('/nlp/:txt', function (req, res, next) {
   console.log('Request Type:', req.method, 'Request Text:', req.params.txt);
   var ret = [];
-  ret.push(classifier.classify(req.params.txt));
+  if (req.params.txt) {
+    ret.push(classifier.classify(req.params.txt));
+  }
   res.send(JSON.stringify(ret));
 });
 

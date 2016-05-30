@@ -18,13 +18,19 @@ export class AislesComponent implements OnInit {
   ngOnInit() {
   }
 
-  getAisles(term:string) {
-    this.aisleNameStream.next(term);
+  private getAisles(term:string) {
+    if (term) {
+      return this.aisleNameStream.next(term);
+    }
   }
 
-  items:Observable<string[]> =
+  public items:Observable<string[]> =
     this.aisleNameStream
       .debounceTime(300)
       .distinctUntilChanged()
       .switchMap((term:string) => this.nlpService.getAisles(term));
+
+  public getAllAisles():Observable<string[]> {
+    return this.nlpService.getAllAisles();
+  }
 }
