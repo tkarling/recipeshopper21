@@ -1,5 +1,5 @@
 <p>
   product-list works!
-  <rs-product-input></rs-product-input>
-  <rs-product-item></rs-product-item>
+  <rs-product-input *ngIf="isEditedItem()" (click)="stopEditing()"></rs-product-input>
+  <rs-product-item *ngIf="! isEditedItem()" (click)="startEditing(testItem)"></rs-product-item>
 </p>

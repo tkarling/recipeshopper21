@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { HTTP_PROVIDERS } from '@angular/http';
+// import { HTTP_PROVIDERS } from '@angular/http';
 import { Routes, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
-
-import { AislesComponent } from './+aisles';
-import { RecipesComponent } from './+recipes';
-import { FavoritesComponent } from './+favorites';
+import { EventsComponent } from './+events';
 
 import {Observable} from 'rxjs/Rx';
+import {provideStore} from '@ngrx/store';
 
 import {MD_SIDENAV_DIRECTIVES} from '@angular2-material/sidenav/sidenav';
 import {MdButton} from '@angular2-material/button';
@@ -15,8 +13,14 @@ import {MdIconRegistry} from '@angular2-material/icon/icon-registry';
 import {MdToolbar} from '@angular2-material/toolbar';
 import {MdList, MdListItem} from '@angular2-material/list';
 
+import { AislesComponent } from './+aisles';
+import { RecipesComponent } from './+recipes';
+import { FavoritesComponent } from './+favorites';
 import { ShoppingComponent } from './+shopping';
-import { ProductService } from './product/product.service';
+
+import { editedItem } from './shared';
+
+// import { EditedItemActions } from './shared';
 import {TestingComponent} from './testing/testing.component';
 
 @Component({
@@ -28,7 +32,12 @@ import {TestingComponent} from './testing/testing.component';
     MdButton, MdIcon, MdToolbar,
     MdList, MdListItem,
     TestingComponent],
-  providers: [HTTP_PROVIDERS, ROUTER_PROVIDERS],
+  providers: [
+    provideStore({editedItem}), 
+    // EditedItemActions,
+    // HTTP_PROVIDERS, 
+    ROUTER_PROVIDERS
+    ],
   viewProviders: [MdIconRegistry],
   // template: `<app-testing></app-testing>`,
   templateUrl: 'recipeshopper21.component.html',
@@ -36,9 +45,10 @@ import {TestingComponent} from './testing/testing.component';
 })
 @Routes([
   { path: '/shopping', component: ShoppingComponent },
-  {path: '/favorites', component: FavoritesComponent},
-  {path: '/recipes', component: RecipesComponent},
-  {path: '/aisles', component: AislesComponent}
+  { path: '/favorites', component: FavoritesComponent },
+  { path: '/recipes', component: RecipesComponent },
+  { path: '/aisles', component: AislesComponent },
+  {path: '/events', component: EventsComponent}
 ])
 export class Recipeshopper21AppComponent {
   get title() {

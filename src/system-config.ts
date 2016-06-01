@@ -5,7 +5,8 @@
 const map: any = {
   'firebase': 'vendor/firebase/lib/firebase-web.js',
   'angularfire2': 'vendor/angularfire2',
-  '@angular2-material': 'vendor/@angular2-material'
+  '@angular2-material': 'vendor/@angular2-material',
+  '@ngrx': 'vendor/@ngrx',  
 };
 
 /** User packages configuration. */
@@ -31,13 +32,16 @@ const barrels: string[] = [
 
   // Thirdparty barrels.
   'rxjs',
+  '@ngrx/store',
 
   // App specific barrels.
   'app', 'app/shared', 'app/testing', 'app/+shopping', 'app/+aisles', 'app/+recipes',
   'app/+favorites',
-  'app/product-list',
+  'app/shared/product-list',
   'app/shared/product-list/product-item',
   'app/shared/product-list/product-input',
+  'app/shared/edited-item',
+  'app/+events',
   /** @cli-barrel */
 ];
 
@@ -49,7 +53,7 @@ declare var System: any;
 
 // Apply the CLI SystemJS configuration.
 System.config({
-  map: {'@angular': 'vendor/@angular', 'rxjs': 'vendor/rxjs', 'main': 'main.js'},
+  map: {'@angular': 'vendor/@angular', 'rxjs': 'vendor/rxjs', 'main': 'main.js', '@ngrx': 'vendor/@ngrx'},
   packages: cliSystemConfigPackages
 });
 
