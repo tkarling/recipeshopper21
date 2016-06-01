@@ -1,29 +1,32 @@
-import {beforeEach, beforeEachProviders, describe, expect, it, inject,} from '@angular/core/testing';
+import {provideStore} from '@ngrx/store';
+import {beforeEach, beforeEachProviders, describe, xdescribe, expect, it, inject, } from '@angular/core/testing';
 import {ComponentFixture, TestComponentBuilder} from '@angular/compiler/testing';
 import {Component} from '@angular/core';
 import {By} from '@angular/platform-browser';
 import {FavoritesComponent} from './favorites.component';
 
+import {editedItem } from '../shared';
+
 describe('Component: Favorites', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [FavoritesComponent]);
+  beforeEachProviders(() => [FavoritesComponent, provideStore({ editedItem })]);
   beforeEach(
-      inject([TestComponentBuilder], function(tcb: TestComponentBuilder) { builder = tcb; }));
+    inject([TestComponentBuilder], function (tcb: TestComponentBuilder) { builder = tcb; }));
 
   it('should inject the component',
-     inject([FavoritesComponent], (component: FavoritesComponent) => {
-       expect(component).toBeTruthy();
-     }));
+    inject([FavoritesComponent], (component: FavoritesComponent) => {
+      expect(component).toBeTruthy();
+    }));
 
   it('should create the component', inject([], () => {
-       return builder.createAsync(FavoritesComponentTestController)
-           .then((fixture: ComponentFixture<any>) => {
-             let query = fixture.debugElement.query(By.directive(FavoritesComponent));
-             expect(query).toBeTruthy();
-             expect(query.componentInstance).toBeTruthy();
-           });
-     }));
+    return builder.createAsync(FavoritesComponentTestController)
+      .then((fixture: ComponentFixture<any>) => {
+        let query = fixture.debugElement.query(By.directive(FavoritesComponent));
+        expect(query).toBeTruthy();
+        expect(query.componentInstance).toBeTruthy();
+      });
+  }));
 });
 
 @Component({

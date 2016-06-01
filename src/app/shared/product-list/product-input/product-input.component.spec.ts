@@ -2,6 +2,7 @@ import {
   beforeEach,
   beforeEachProviders,
   describe,
+  fdescribe,
   expect,
   it,
   inject,
@@ -37,7 +38,7 @@ describe('Component: ProductInput', () => {
 @Component({
   selector: 'test',
   template: `
-    <app-product-input></app-product-input>
+    <rs-product-input></rs-product-input>
   `,
   directives: [ProductInputComponent]
 })

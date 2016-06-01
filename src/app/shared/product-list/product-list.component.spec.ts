@@ -1,7 +1,9 @@
+import {provideStore} from '@ngrx/store';
 import {
   beforeEach,
   beforeEachProviders,
   describe,
+  xdescribe,
   expect,
   it,
   inject,
@@ -11,10 +13,12 @@ import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { ProductListComponent } from './product-list.component';
 
+import {editedItem } from '../../shared';
+
 describe('Component: ProductList', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [ProductListComponent]);
+  beforeEachProviders(() => [ProductListComponent, provideStore({ editedItem })]);
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder) {
     builder = tcb;
   }));

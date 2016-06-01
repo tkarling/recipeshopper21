@@ -37,7 +37,7 @@ describe('Component: ProductItem', () => {
 @Component({
   selector: 'test',
   template: `
-    <app-product-item></app-product-item>
+    <rs-product-item></rs-product-item>
   `,
   directives: [ProductItemComponent]
 })
