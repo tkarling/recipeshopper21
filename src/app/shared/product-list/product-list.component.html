@@ -1,5 +1,15 @@
 <p>
-  product-list works!
-  <rs-product-input *ngIf="isEditedItem()" (click)="stopEditing()"></rs-product-input>
-  <rs-product-item *ngIf="! isEditedItem()" (click)="startEditing(testItem)"></rs-product-item>
+  <rs-product-input></rs-product-input>
+  <md-list>
+    <div *ngFor="let product of products">
+      <rs-product-input *ngIf="isEditedItem(product)" (click)="stopEditing()"></rs-product-input>
+      <rs-product-item *ngIf="! isEditedItem(product)" 
+      [product]="product" [checked]="checked(product)"
+                [shouldLineThrough] ="shouldLineThrough"
+                (toggle)="toggle($event)"
+                (remove)="removeProduct(product)"
+                (startEditing)="startEditing(product)"
+      ></rs-product-item>
+    </div>
+  </md-list>
 </p>

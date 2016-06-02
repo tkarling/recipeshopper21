@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {provideStore, Store, Action} from '@ngrx/store';
+import {Store, Action} from '@ngrx/store';
 
 import {ProductItemComponent} from './product-item';
 import {ProductInputComponent} from './product-input';
@@ -9,6 +9,11 @@ import {editedItem, START_EDITING, STOP_EDITING
 } from '../../shared';
 import {ProductModel} from '../../shared';
 
+export enum ProductListType {
+    shopping,
+    favorites
+}
+
 @Component({
     moduleId: module.id,
     selector: 'rs-product-list',
@@ -17,10 +22,16 @@ import {ProductModel} from '../../shared';
     styleUrls: ['product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
+    type: ProductListType = ProductListType.shopping;
     testItem: ProductModel = new ProductModel('moi');
+    products: ProductModel[] = [
+        new ProductModel('milk', 'dairy', '1', 'carton'),
+        new ProductModel('bread', 'bakery'),
+        new ProductModel('broccoli', 'veggies')
+    ];
 
     constructor(private store: Store<any>
-    // , private editedItemActions: EditedItemActions
+        // , private editedItemActions: EditedItemActions
     ) {
         // store.select('editedItem');
         // console.log('this.editedItem', store.getState().editedItem);
@@ -28,9 +39,9 @@ export class ProductListComponent implements OnInit {
 
     ngOnInit() {
     }
-    
-    isEditedItem() {
-        return this.store.getState().editedItem === this.testItem;
+
+    isEditedItem(product: ProductModel) {
+        return this.store.getState().editedItem === product;
     }
 
     startEditing(product: ProductModel) {
@@ -49,4 +60,26 @@ export class ProductListComponent implements OnInit {
         });
     }
 
+
+
+    get shouldLineThrough() {
+        return this.type === ProductListType.shopping;
+    }
+
+    checked(product) {
+        return this.type === ProductListType.shopping ? product.isBought : product.onList;
+    }
+
+    toggle(product: ProductModel) {
+        console.log('toggle', product);
+        product.isBought = ! product.isBought;
+        // return  this.type === ProductListType.shopping ?
+        //     this.productsService.toggleBought(product) : this.productsService.toggleOnList(product);
+    }
+
+    removeProduct(product: ProductModel) {
+        console.log('removeProduct', product);
+        // return  this.type === ProductListType.shopping ?
+        //     this.productsService.toggleOnList(product) : this.productsService.removeProduct(product);
+    }
 }

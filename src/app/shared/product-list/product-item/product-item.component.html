@@ -1,3 +1,10 @@
-<p>
-  product-item works!
-</p>
+<md-list-item>
+  <md-icon md-list-avatar (click)="toggle.emit(product)">{{checkboxIcon(checked)}}</md-icon>
+  <h3 md-line (click)="startEditing.emit(product)">
+            <span [ngClass]="myStyle(product.status)">{{product.amount}} </span>
+  <span [ngClass]="myStyle(product.status)">{{product.unit}} </span>
+  <span [ngClass]="myStyle(product.status)">{{product.name}}</span>
+  </h3>
+  <p md-line [ngClass]="myStyle(product.status)" (click)="startEditing.emit(product)"> {{product.aisle}}</p>
+  <md-icon (click)="remove.emit(product)">delete</md-icon>
+</md-list-item>
