@@ -3,6 +3,10 @@
    License: none (public domain)
 */
 
+* {
+  background-color: transparent;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -19,8 +23,8 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-//font-size: 100%;
-//font: inherit;
+/*//font-size: 100%;*/
+/*//font: inherit;*/
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -28,9 +32,9 @@ article, aside, details, figcaption, figure,
 footer, header, menu, nav, section {
   display: block;
 }
-body {
+/*body {
 //line-height: 1;
-}
+}*/
 ol, ul {
   list-style: none;
 }
@@ -53,7 +57,12 @@ table {
   box-sizing: border-box;
 }
 
+/*$backgroud-color = #e6fffc;*/
+/*$primary-color = #009688;*/
+/*$accent-color = #9e28b2;*/
+
 html, body {
   /*background-color: #E8EAF6;*/
+  background-color: #e6fffc;
   height:100%;
 }

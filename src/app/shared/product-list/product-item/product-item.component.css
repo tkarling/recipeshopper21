@@ -1,3 +1,7 @@
 .bought {
     text-decoration: line-through;
 }
+
+md-icon, p {
+    color: #9e28b2;
+}

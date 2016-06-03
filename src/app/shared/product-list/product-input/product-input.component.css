@@ -1,0 +1,21 @@
+td {
+    padding: 0px 6px;
+}
+
+table, md-input {
+   width: 100%; 
+}
+
+.help-text {
+    color: #9e28b2;
+    font-size: 90%;
+}
+
+md-card {
+   background-color: #ccfffa; 
+   border:1px solid #009688;
+}
+
+rs-input {
+   background-color: transparent; 
+}

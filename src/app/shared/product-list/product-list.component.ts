@@ -72,7 +72,7 @@ export class ProductListComponent implements OnInit {
 
     toggle(product: ProductModel) {
         console.log('toggle', product);
-        product.isBought = ! product.isBought;
+        product.isBought = !product.isBought;
         // return  this.type === ProductListType.shopping ?
         //     this.productsService.toggleBought(product) : this.productsService.toggleOnList(product);
     }
@@ -82,4 +82,14 @@ export class ProductListComponent implements OnInit {
         // return  this.type === ProductListType.shopping ?
         //     this.productsService.toggleOnList(product) : this.productsService.removeProduct(product);
     }
+
+    addProduct(product: ProductModel) {
+        console.log('addProduct', product);
+    }
+
+    updateProduct(product: ProductModel, updates: ProductModel) {
+        console.log('updateProduct', product, updates);
+        this.stopEditing();
+    }
+
 }

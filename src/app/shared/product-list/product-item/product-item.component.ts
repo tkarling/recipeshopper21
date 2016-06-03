@@ -3,7 +3,7 @@ import { ProductModel } from '../../../shared';
 
 import {MdButton} from '@angular2-material/button';
 import {MdIcon} from '@angular2-material/icon';
-import {MdListItem, MdLine, MdListAvatar} from '@angular2-material/list';
+import {MdListItem, MdListAvatar} from '@angular2-material/list';
 
 const ICON_CHECKED = 'done';
 const ICON_NOT_CHECKED = 'check_box_outline_blank';
@@ -11,7 +11,7 @@ const ICON_NOT_CHECKED = 'check_box_outline_blank';
 @Component({
   moduleId: module.id,
   selector: 'rs-product-item',
-  directives: [MdListItem, MdLine, MdListAvatar,
+  directives: [MdListItem, MdListAvatar,
     MdButton, MdIcon],
   templateUrl: 'product-item.component.html',
   styleUrls: ['product-item.component.css']

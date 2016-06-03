@@ -1,3 +1,33 @@
-<p>
-  product-input works!
-</p>
+<md-card class="demo-card demo-basic">
+  <form (ngSubmit)="onSubmit()" #productForm="ngForm">
+    <!--{{diagnostic}}-->
+    <table cellspacing="0">
+      <tr>
+        <td width="25%">
+          <md-input style="background-color: transparent;" placeholder="Amount" [(ngModel)]="productModel.amount"></md-input>
+        </td>
+        <td width="25%">
+          <md-input style="background-color: transparent;" placeholder="Unit" [(ngModel)]="productModel.unit"></md-input>
+        </td>
+        <td width="50%">
+          <md-input style="background-color: transparent;" placeholder="Name" [(ngModel)]="productModel.name" required
+          ngControl="name"  #name="ngForm"></md-input>
+          <span class="help-text" [hidden]="productModel.name">Name is required</span>
+        </td>
+      </tr>
+    </table>
+
+    <table cellspacing="0">
+      <tr>
+        <td width="100%">
+          <md-input style="background-color: transparent;" placeholder="Aisle" value="{{defaultAisle}}"></md-input>
+        </td>
+        <td width="50px">
+          <button md-mini-fab type="submit" [disabled]="!productForm.form.valid">
+            <md-icon (click)="onSubmit()">{{adding ? 'add' : 'done'}}</md-icon>
+          </button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</md-card>

@@ -1,15 +1,10 @@
 <p>
-  <rs-product-input></rs-product-input>
+  <rs-product-input (add)="addProduct($event)"></rs-product-input>
   <md-list>
     <div *ngFor="let product of products">
-      <rs-product-input *ngIf="isEditedItem(product)" (click)="stopEditing()"></rs-product-input>
-      <rs-product-item *ngIf="! isEditedItem(product)" 
-      [product]="product" [checked]="checked(product)"
-                [shouldLineThrough] ="shouldLineThrough"
-                (toggle)="toggle($event)"
-                (remove)="removeProduct(product)"
-                (startEditing)="startEditing(product)"
-      ></rs-product-item>
+      <rs-product-input *ngIf="isEditedItem(product)" [product]="product" (update)="updateProduct(product, $event)"></rs-product-input>
+      <rs-product-item *ngIf="! isEditedItem(product)" [product]="product" [checked]="checked(product)" [shouldLineThrough]="shouldLineThrough"
+        (toggle)="toggle(product)" (remove)="removeProduct(product)" (startEditing)="startEditing(product)"></rs-product-item>
     </div>
   </md-list>
 </p>

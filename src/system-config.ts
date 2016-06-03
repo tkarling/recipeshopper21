@@ -17,8 +17,9 @@ const packages: any = {
   '@angular2-material/toolbar': {format: 'cjs', defaultExtension: 'js', main: 'toolbar.js'},
   '@angular2-material/button': {format: 'cjs', defaultExtension: 'js', main: 'button.js'},
   '@angular2-material/icon': {format: 'cjs', defaultExtension: 'js', main: 'icon.js'},
-  '@angular2-material/list': {format: 'cjs', defaultExtension: 'js', main: 'list.js'}
-
+  '@angular2-material/input': {format: 'cjs', defaultExtension: 'js', main: 'input.js'},
+  '@angular2-material/list': {format: 'cjs', defaultExtension: 'js', main: 'list.js'},
+  '@angular2-material/card': {format: 'cjs', defaultExtension: 'js', main: 'card.js'}
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
